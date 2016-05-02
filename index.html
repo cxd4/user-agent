@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>User Agent String Analysis</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body onload="DOM_callback()">
+<p>Waiting on string analysis...</p>
+<p>If this never completes, your browser might not have JavaScript enabled.</p>
+
+<script type="text/javascript" src="usragent.js"></script>
+<script type="text/javascript">
+function DOM_callback() {
+    "use strict";
+    var output;
+    var SGML;
+    var header;
+    var version = "-//IETF//DTD HTML 2.0 Strict Level 1//EN";
+
+    SGML = "<!DOCTYPE HTML PUBLIC \"" + version + "\">\n";
+    header = "<HTML>\n<HEAD>\n<TITLE>User Agent String</TITLE>\n</HEAD>\n\n";
+    output = parse_user_agent(navigator.userAgent);
+    document.write(SGML + header + "<BODY>\n" + output + "\n</BODY></HTML>\n");
+    return;
+}
+</script>
+
+</body>
+</html>
