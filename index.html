@@ -7,22 +7,19 @@
 </head>
 
 <body onload="DOM_callback()">
-<p>Waiting on string analysis...</p>
-<p>If this never completes, your browser might not have JavaScript enabled.</p>
+<p id="string">Waiting on string analysis...</p>
+<p id="browse">If this never completes,</p>
+<p id="system">then your browser might not have JavaScript enabled.</p>
 
 <script type="text/javascript" src="usragent.js"></script>
 <script type="text/javascript">
 function DOM_callback() {
     "use strict";
-    var output;
-    var SGML;
-    var header;
-    var version = "-//IETF//DTD HTML 2.0 Strict Level 1//EN";
+    var output = parse_user_agent(navigator.userAgent);
 
-    SGML = "<!DOCTYPE HTML PUBLIC \"" + version + "\">\n";
-    header = "<HTML>\n<HEAD>\n<TITLE>User Agent String</TITLE>\n</HEAD>\n\n";
-    output = parse_user_agent(navigator.userAgent);
-    document.write(SGML + header + "<BODY>\n" + output + "\n</BODY></HTML>\n");
+    document.getElementById("string").innerHTML = output[0];
+    document.getElementById("browse").innerHTML = output[1];
+    document.getElementById("system").innerHTML = output[2];
     return;
 }
 </script>
