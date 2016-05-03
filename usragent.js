@@ -39,10 +39,30 @@ function parse_user_agent(agent) {
 
     fields[0] = agent;
     fields[1] = "(unknown)";
-    fields[2] = "Unix-derived";
+    fields[2] = "UNICS-derived";
     if (fields[0] === "") {
         fields[0] = "(no browser identification sent)";
         return (fields);
+    }
+
+    if (strstr(agent, "Mobile")) {
+        if (strstr(agent, "Win")) {
+            fields[2] = "Windows Mobile";
+	} else if (strstr(agent, "Android")) {
+            fields[2] = "Google Android";
+        } else {
+            fields[2] = "Apple iOS";
+        }
+    } else if (strstr(agent, "Win")) {
+        fields[2] = "Microsoft Windows";
+    } else if (strstr(agent, "Mac")) {
+        fields[2] = "Apple Macintosh";
+    } else if (strstr(agent, "BSD")) {
+        fields[2] = "BSD Unix family";
+    } else if (strstr(agent, "Sun") || strstr(agent, "Solar")) {
+        fields[2] = "Solaris";
+    } else if (strstr(agent, "X11")) {
+        fields[2] = "Unix-based, running X";
     }
 
     if (strstr(agent, "Lynx")) {
