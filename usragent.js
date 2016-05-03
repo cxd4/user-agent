@@ -38,17 +38,35 @@ function parse_user_agent(agent) {
     var fields = [];
 
     fields[0] = agent;
-    fields[1] = "Mozilla-compatible";
+    fields[1] = "(unknown)";
     fields[2] = "Unix-derived";
-
     if (fields[0] === "") {
         fields[0] = "(no browser identification sent)";
-        fields[1] = "(unknown)";
         return (fields);
     }
 
-    if (strstr(agent, "Firefox")) {
-        fields[1] = "Mozilla Firefox";
+    if (strstr(agent, "Lynx")) {
+        fields[1] = "Lynx";
+    } else if (strstr(agent, "Links")) {
+        fields[1] = "Links";
+    } else if (strstr(agent, "OPR") || strstr(agent, "Opera")) {
+        fields[1] = "Opera";
+    } else if (strstr(agent, "Netscape") || strstr(agent, "Navigator")) {
+        fields[1] = "Netscape Navigator";
+    } else if (strstr(agent, "Konqueror") || strstr(agent, "konqueror")) {
+        fields[1] = "Konqueror";
+    } else if (strstr(agent, "Safari")) {
+        fields[1] = "Apple Safari";
+    } else if (strstr(agent, "Chrome")) {
+        fields[1] = "Google Chrome";
+    } else if (strstr(agent, "MSIE")) {
+        fields[1] = "Microsoft Internet Explorer";
+    } else if (strstr(agent, "Mozilla")) {
+        if (strstr(agent, "Fire") || strstr(agent, "Phoenix")) {
+            fields[1] = "Mozilla Firefox";
+        } else {
+            fields[1] = "Mozilla-compatible";
+        }
     }
     return (fields);
 }
