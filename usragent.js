@@ -33,17 +33,50 @@ function strstr(haystack, needle) {
     return false;
 }
 
+function get_browser_from_agent(agent) {
+    "use strict";
+    if (strstr(agent, "Lynx")) {
+        return "Lynx";
+    }
+    if (strstr(agent, "Links")) {
+        return "Links";
+    }
+    if (strstr(agent, "OPR") || strstr(agent, "Opera")) {
+        return "Opera";
+    }
+    if (strstr(agent, "Netscape") || strstr(agent, "Navigator")) {
+        return "Netscape Navigator";
+    }
+    if (strstr(agent, "Konqueror") || strstr(agent, "konqueror")) {
+        return "Konqueror";
+    }
+    if (strstr(agent, "Safari")) {
+        return "Apple Safari";
+    }
+    if (strstr(agent, "Chrome")) {
+        return "Google Chrome";
+    }
+    if (strstr(agent, "MSIE")) {
+        return "Microsoft Internet Explorer";
+    }
+    if (strstr(agent, "Mozilla") && strstr(agent, "Fire")) {
+        return "Mozilla Firefox";
+    }
+    return "Mozilla-compatible";
+}
+
 function parse_user_agent(agent) {
     "use strict";
     var fields = [];
 
-    fields[0] = agent;
-    fields[1] = "(unknown)";
     fields[2] = "UNICS-derived";
-    if (fields[0] === "") {
+    if (agent === "") {
         fields[0] = "(no browser identification sent)";
+        fields[1] = "(unknown)";
         return (fields);
     }
+    fields[0] = agent;
+    fields[1] = get_browser_from_agent(agent);
 
     if (strstr(agent, "Mobile")) {
         if (strstr(agent, "Win")) {
@@ -65,28 +98,5 @@ function parse_user_agent(agent) {
         fields[2] = "Unix-based, running X";
     }
 
-    if (strstr(agent, "Lynx")) {
-        fields[1] = "Lynx";
-    } else if (strstr(agent, "Links")) {
-        fields[1] = "Links";
-    } else if (strstr(agent, "OPR") || strstr(agent, "Opera")) {
-        fields[1] = "Opera";
-    } else if (strstr(agent, "Netscape") || strstr(agent, "Navigator")) {
-        fields[1] = "Netscape Navigator";
-    } else if (strstr(agent, "Konqueror") || strstr(agent, "konqueror")) {
-        fields[1] = "Konqueror";
-    } else if (strstr(agent, "Safari")) {
-        fields[1] = "Apple Safari";
-    } else if (strstr(agent, "Chrome")) {
-        fields[1] = "Google Chrome";
-    } else if (strstr(agent, "MSIE")) {
-        fields[1] = "Microsoft Internet Explorer";
-    } else if (strstr(agent, "Mozilla")) {
-        if (strstr(agent, "Fire") || strstr(agent, "Phoenix")) {
-            fields[1] = "Mozilla Firefox";
-        } else {
-            fields[1] = "Mozilla-compatible";
-        }
-    }
     return (fields);
 }
