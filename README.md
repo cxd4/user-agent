@@ -12,7 +12,7 @@ More detailed and/or portable test sites:
 * http://quirktools.com/retro/
 * https://www.whatismyip.com/user-agent-info/
 * http://tools.tracemyip.org/user-agent-string-decoder/
-* https://useragentapi.com/
+* https://useragentapi.com/ (doesn't work with some browsers, e.g. Lynx)
 * http://whichbrowser.net/ (requires JavaScript)
 * http://www.whatsmyua.com/ (requires JavaScript)
 
