@@ -7,10 +7,12 @@
 </head>
 
 <body onload="DOM_callback()">
-<p id="string">Waiting on string analysis...</p>
-<p id="browse">If this never completes,</p>
-<p id="system">then your browser might not have JavaScript enabled.</p>
-<p id="engine"></p>
+<table border="0">
+<tr><td>user agent:</td><td id="string">Waiting on string analysis...</td></tr>
+<tr><td>browser:</td><td id="browse">If this never completes,</td></tr>
+<tr><td>operating system:</td><td id="system">then your browser might not have JavaScript enabled.</td></tr>
+<tr><td>page render engine:</td><td id="engine"></td></tr>
+</table>
 
 <script type="text/javascript" src="usragent.js"></script>
 <script type="text/javascript">
