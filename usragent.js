@@ -101,6 +101,7 @@ function get_OS_from_agent(agent) {
 }
 
 function get_engine_from_agent(agent) {
+    "use strict";
     var i = 0;
     var known_agents = [
         "Blink", "WebKit", "Gecko", "Presto", "KHTML", "Trident", "EdgeHTML"
