@@ -1,0 +1,38 @@
+User agent strings for all browsers bundled with Slackware64 14.1 Linux 3.10 x86_64.
+
+
+Lynx 2.8.7:
+Lynx/2.8.7rel.1 libwww-FM/2.14
+
+Links 2.8:
+Links (2.8; Linux 3.10.17 x86_64; GNU C 4.8.1; text)
+
+Konqueror 4.10.5 (set to KHTML):
+Mozilla/5.0 (X11) KHTML/4.10.5 (like Gecko) Konqueror/4.10
+
+Konqueror 4.10.5 (set to WebKit--Apple's fork of KHTML in Safari):
+Mozilla/5.0 (X11;) AppleWebKit/534.34 (KHTML, like Gecko) konqueror/4.10.5 Safari/534.34
+
+FireFox 38.6.0:
+Mozilla/5.0 (X11; Linux x86_64; rv:38.0) Gecko/20100101 Firefox/38.0
+
+SeaMonkey 2.39:
+Mozilla/5.0 (X11; Linux x86_64; rv:42.0) Gecko/20100101 Firefox/42.0 SeaMonkey/2.39
+
+Wget 1.14 (not really a browser, just a Stallman-ism):
+Wget/1.14 (linux-gnu)
+
+Not listed (and not tested by http://cxd4.github.io/user-agents/):
+* Google Chrome (in Slackware "extra" packages section, but haven't installed)
+* Chromium (should probably try compiling this again but just haven't)
+* Palemoon (another FireFox fork...I think it's Windows-only tho?)
+* Internet Explorer 11 (forgot...used to test Windows 3.1, 98, XP, Vista, 7)
+* Opera (never really used it but once...closed-source "extra" of Slackware)
+
+
+
+User agent for an AT&T GoPhone I tested (just out of curiosity):
+
+
+ZTE-Z222/1.0.6 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1
+166.137.248.117 (no IPv6 connectivity)
