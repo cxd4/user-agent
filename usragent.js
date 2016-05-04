@@ -65,38 +65,48 @@ function get_browser_from_agent(agent) {
     return "Mozilla-compatible";
 }
 
+function get_OS_from_agent(agent) {
+    "use strict";
+    if (strstr(agent, "Mobile")) {
+        if (strstr(agent, "Win")) {
+            return "Windows Mobile";
+        }
+        if (strstr(agent, "Android")) {
+            return "Google Android";
+        }
+        return "Apple iOS";
+    }
+    if (strstr(agent, "Win")) {
+        return "Microsoft Windows";
+    }
+    if (strstr(agent, "Mac")) {
+        return "Apple Macintosh";
+    }
+    if (strstr(agent, "BSD")) {
+        return "BSD Unix family";
+    }
+    if (strstr(agent, "Sun") || strstr(agent, "Solar")) {
+        return "Solaris";
+    }
+    if (strstr(agent, "X11")) {
+        return "Unix-based, running X";
+    }
+    return "unknown";
+}
+
 function parse_user_agent(agent) {
     "use strict";
     var fields = [];
 
-    fields[2] = "UNICS-derived";
     if (agent === "") {
         fields[0] = "(no browser identification sent)";
         fields[1] = "(unknown)";
+        fields[2] = "UNICS-derived";
         return (fields);
     }
+
     fields[0] = agent;
     fields[1] = get_browser_from_agent(agent);
-
-    if (strstr(agent, "Mobile")) {
-        if (strstr(agent, "Win")) {
-            fields[2] = "Windows Mobile";
-        } else if (strstr(agent, "Android")) {
-            fields[2] = "Google Android";
-        } else {
-            fields[2] = "Apple iOS";
-        }
-    } else if (strstr(agent, "Win")) {
-        fields[2] = "Microsoft Windows";
-    } else if (strstr(agent, "Mac")) {
-        fields[2] = "Apple Macintosh";
-    } else if (strstr(agent, "BSD")) {
-        fields[2] = "BSD Unix family";
-    } else if (strstr(agent, "Sun") || strstr(agent, "Solar")) {
-        fields[2] = "Solaris";
-    } else if (strstr(agent, "X11")) {
-        fields[2] = "Unix-based, running X";
-    }
-
+    fields[2] = get_OS_from_agent(agent);
     return (fields);
 }
