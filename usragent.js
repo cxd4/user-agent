@@ -48,7 +48,7 @@ function parse_user_agent(agent) {
     if (strstr(agent, "Mobile")) {
         if (strstr(agent, "Win")) {
             fields[2] = "Windows Mobile";
-	} else if (strstr(agent, "Android")) {
+        } else if (strstr(agent, "Android")) {
             fields[2] = "Google Android";
         } else {
             fields[2] = "Apple iOS";
