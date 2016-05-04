@@ -9,7 +9,7 @@ function strlen(string) {
     return (string.length);
 }
 function strstr(haystack, needle) {
-    "use strict"; /*
+    "use strict";
     var i = 0;
     var j = 0;
     var limit = strlen(haystack);
@@ -26,11 +26,9 @@ function strstr(haystack, needle) {
             return true;
         }
         i += 1;
-    } */
-    if (haystack.search(needle) >= 0) {
-        return true;
     }
-    return false;
+    return null;
+ // return (haystack.search(needle) >= 0); // broken KTHML vs. Gecko key read
 }
 
 function get_browser_from_agent(agent) {
