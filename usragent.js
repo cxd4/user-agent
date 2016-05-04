@@ -100,6 +100,21 @@ function get_OS_from_agent(agent) {
     return "(unknown operating system)";
 }
 
+function get_engine_from_agent(agent) {
+    var i = 0;
+    var known_agents = [
+        "Blink", "WebKit", "Gecko", "Presto", "KHTML", "Trident", "EdgeHTML"
+    ];
+
+    while (i < 7) {
+        if (strstr(agent, known_agents[i])) {
+            return (known_agents[i]);
+        }
+        i += 1;
+    }
+    return "(custom, proprietary, or none at all)";
+}
+
 function parse_user_agent(agent) {
     "use strict";
     var fields = [];
@@ -108,11 +123,13 @@ function parse_user_agent(agent) {
         fields[0] = "(no browser identification sent)";
         fields[1] = "(unknown)";
         fields[2] = "UNICS-derived";
+        fields[3] = "(no way to guess)"; /* I know that's wrong.  Be quiet! */
         return (fields);
     }
 
     fields[0] = agent;
     fields[1] = get_browser_from_agent(agent);
     fields[2] = get_OS_from_agent(agent);
+    fields[3] = get_engine_from_agent(agent);
     return (fields);
 }

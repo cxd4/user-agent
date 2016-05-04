@@ -10,16 +10,20 @@
 <p id="string">Waiting on string analysis...</p>
 <p id="browse">If this never completes,</p>
 <p id="system">then your browser might not have JavaScript enabled.</p>
+<p id="engine"></p>
 
 <script type="text/javascript" src="usragent.js"></script>
 <script type="text/javascript">
 function DOM_callback() {
     "use strict";
+    var i = 0;
+    var IDs = ["string", "browse", "system", "engine" ];
     var output = parse_user_agent(navigator.userAgent);
 
-    document.getElementById("string").innerHTML = output[0];
-    document.getElementById("browse").innerHTML = output[1];
-    document.getElementById("system").innerHTML = output[2];
+    while (i < 4) {
+        document.getElementById(IDs[i]).innerHTML = output[i];
+        i += 1;
+    }
     return;
 }
 </script>
