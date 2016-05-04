@@ -10,8 +10,8 @@ More detailed and/or portable test sites:
 * https://www.whatismybrowser.com/developers/tools/user-agent-parser/
 * https://udger.com/resources/online-parser
 * http://quirktools.com/retro/
-* https://www.whatismyip.com/user-agent-info/
 * http://tools.tracemyip.org/user-agent-string-decoder/
+* https://www.whatismyip.com/user-agent-info/ (doesn't work on some browsers)
 * https://useragentapi.com/ (doesn't work with some browsers, e.g. Lynx)
 * http://whichbrowser.net/ (requires JavaScript)
 * http://www.whatsmyua.com/ (requires JavaScript)
