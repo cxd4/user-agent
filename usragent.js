@@ -91,7 +91,7 @@ function get_OS_from_agent(agent) {
     if (strstr(agent, "X11")) {
         return "Unix-based, running X";
     }
-    return "unknown";
+    return "(unknown operating system)";
 }
 
 function parse_user_agent(agent) {
