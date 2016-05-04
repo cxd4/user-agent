@@ -57,10 +57,13 @@ function get_browser_from_agent(agent) {
     if (strstr(agent, "MSIE")) {
         return "Microsoft Internet Explorer";
     }
-    if (strstr(agent, "Mozilla") && strstr(agent, "Fire")) {
+    if (strstr(agent, "Firefox")) {
         return "Mozilla Firefox";
     }
-    return "Mozilla-compatible";
+    if (strstr(agent, "Mozilla")) {
+        return "Mozilla-compatible";
+    }
+    return "(unknown)";
 }
 
 function get_OS_from_agent(agent) {
