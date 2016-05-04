@@ -7,14 +7,14 @@ Note that the user agent field of the `navigator` object has been deprecated not
 
 More detailed and/or portable test sites:
 
-* http://whichbrowser.net/
 * https://www.whatismybrowser.com/developers/tools/user-agent-parser/
 * https://udger.com/resources/online-parser
 * http://quirktools.com/retro/
-* http://www.whatsmyua.com/
 * https://www.whatismyip.com/user-agent-info/
 * http://tools.tracemyip.org/user-agent-string-decoder/
 * https://useragentapi.com/
+* http://whichbrowser.net/ (requires JavaScript)
+* http://www.whatsmyua.com/ (requires JavaScript)
 
 More information also at:
 
