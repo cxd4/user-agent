@@ -48,11 +48,11 @@ function get_browser_from_agent(agent) {
     if (strstr(agent, "Konqueror") || strstr(agent, "konqueror")) {
         return "Konqueror";
     }
-    if (strstr(agent, "Safari")) {
-        return "Apple Safari";
-    }
     if (strstr(agent, "Chrome")) {
         return "Google Chrome";
+    }
+    if (strstr(agent, "Safari")) {
+        return "Apple Safari";
     }
     if (strstr(agent, "MSIE")) {
         return "Microsoft Internet Explorer";
