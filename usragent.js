@@ -61,7 +61,9 @@ function get_browser_from_agent(agent) {
         return "Mozilla Firefox";
     }
     if (strstr(agent, "Mozilla")) {
-        return "Mozilla-compatible";
+        return strstr(agent, "Gecko")
+            ? "Mozilla-compatible"
+            : "Mosaic Netscape";
     }
     return "(unknown)";
 }
