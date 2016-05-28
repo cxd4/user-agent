@@ -94,12 +94,39 @@ function get_OS_from_agent(agent) {
     if (strstr(agent, "Sun") || strstr(agent, "Solar")) {
         return "Solaris";
     }
-    if (strstr(agent, "GNU")) {
-        return "FSF GNU Project, with HURD";
+
+ // all the "ganoo slash linOX" stuff
+    if (strstr(agent, "Debian")) {
+        return "Debian";
+    }
+    if (strstr(agent, "Red Hat")) {
+        return "Red Hat";
+    }
+    if (strstr(agent, "Arch")) {
+        return "Arch";
+    }
+    if (strstr(agent, "Slackware")) {
+        return "Slackware";
+    }
+    if (strstr(agent, "Gentoo")) {
+        return "Stallmanix (just kidding; it's Gentoo)";
+    }
+    if (strstr(agent, "Ubuntu") || strstr(agent, "ubuntu")) {
+        return "Ubuntu"; // Ubuntu, Kubuntu, Gubuntu, Xubuntu, ...whatever
+    }
+    if (strstr(agent, "Fedora")) {
+        return "Fedora";
+    }
+    if (strstr(agent, "GNU") && strstr(agent, "Linux")) {
+        return "GNU/Linux";
     }
     if (strstr(agent, "Linux")) {
         return "Linux, presumably with GNU";
     }
+    if (strstr(agent, "GNU")) {
+        return "FSF GNU Project, with HURD";
+    }
+
     if (strstr(agent, "X11")) {
         return "Unix-based, running X";
     }
