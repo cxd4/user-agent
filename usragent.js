@@ -39,6 +39,9 @@ function get_browser_from_agent(agent) {
     if (strstr(agent, "Links")) {
         return "Links";
     }
+    if (strstr(agent, "NetSurf")) {
+        return "NetSurf";
+    }
     if (strstr(agent, "OPR") || strstr(agent, "Opera")) {
         return "Opera";
     }
