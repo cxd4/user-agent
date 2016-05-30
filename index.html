@@ -7,14 +7,16 @@
 </head>
 
 <body onload="DOM_callback()">
+<noscript>
+Your browser is not accepting client-side scripts.  Lacking our own personal server, there is no fallback.
+</noscript>
 <table>
-<tr><td>user agent:</td><td id="string">Waiting on string analysis...</td></tr>
-<tr><td>browser:</td><td id="browse">If this never completes,</td></tr>
-<tr><td>operating system:</td><td id="system">then your browser might not have JavaScript enabled.</td></tr>
-<tr><td>page render engine:</td><td id="engine"></td></tr>
+<tr><td>user agent:</td><td id="string">...</td></tr>
+<tr><td>browser:</td><td id="browse">...</td></tr>
+<tr><td>operating system:</td><td id="system">...</td></tr>
+<tr><td>page render engine:</td><td id="engine">...</td></tr>
 </table>
 
-<script type="text/javascript" src="usragent.js"></script>
 <script type="text/javascript">
 function DOM_callback() {
     "use strict";
@@ -29,6 +31,7 @@ function DOM_callback() {
     return;
 }
 </script>
+<script type="text/javascript" src="usragent.js"></script>
 
 <p>JavaScript-free, more detailed user agent analysis test sites:</p>
 <ul>
