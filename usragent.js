@@ -60,6 +60,9 @@ function get_browser_from_agent(agent) {
     if (strstr(agent, "MSIE")) {
         return "Microsoft Internet Explorer";
     }
+    if (strstr(agent, "SeaMonkey")) {
+        return "Mozilla SeaMonkey";
+    }
     if (strstr(agent, "Firefox")) {
         return "Mozilla Firefox";
     }
