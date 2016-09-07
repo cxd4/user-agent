@@ -140,7 +140,7 @@ function get_engine_from_agent(agent) {
     "use strict";
     var i = 0;
     var known_agents = [
-        "Blink", "WebKit", "KHTML", "Gecko", "Presto", "Trident", "EdgeHTML"
+        "Blink", "WebKit", "KHTML", "Presto", "Trident", "EdgeHTML", "Gecko"
     ];
 
     while (i < 7) {
